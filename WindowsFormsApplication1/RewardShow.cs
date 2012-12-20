@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
 
             this.label1.Text = szShow;
 
-           // config2.main2Instatn.AddRecord(szShow);
+            // main2.AddRecord(szShow);
         }
 
         private void button1_Click(object sender, EventArgs e)

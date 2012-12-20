@@ -33,9 +33,9 @@ namespace WindowsFormsApplication1
             ((main2)(mainForm)).InitTotalList(nStartId, nEndId);
             mainForm.ShowDialog();
 
-            main2Instatn = ((main2)(mainForm));
+            // main2Instatn = ((main2)(mainForm));
 
-            this.Close();
+            this.Dispose();
         }
     }
 }

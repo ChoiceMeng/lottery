@@ -10,6 +10,7 @@ using System.Collections;
 using System.IO;
 using System.Reflection;
 using System.Media;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApplication1
 {
@@ -35,30 +36,39 @@ namespace WindowsFormsApplication1
         static int nTimes = 0;
 
         SoundPlayer simpleSound;
+        public Form RewardingDlg;
+
+        const uint WM_CLOSE = 0x10;
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool PostMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
+
+        System.Timers.Timer t;
 
         public main2()
         {
             InitializeComponent();
 
             String projectName = Assembly.GetExecutingAssembly().GetName().Name.ToString();
-            Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(projectName + ".Resources" + ".style.wav");
-            simpleSound = new SoundPlayer(resourceStream);
+            Stream resourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(projectName + ".Resources" + ".use.wav");
+            simpleSound = new SoundPlayer(resourceStream);      
         }
 
         void CheckLuckyMan()
         {
             StreamReader objReader = new StreamReader("list.txt");
             string sLine = "";
+
+            string szShow = "";
             while (sLine != null)
             {
                 sLine = objReader.ReadLine();
-                if (sLine == null || sLine.Equals("false"))
-                {
-                    objReader.Close();
-                    return;
-                }
+                //if (sLine == null || sLine.Equals("false"))
+                //{
+               //     objReader.Close();
+               //     return;
+               // }
 
-                if (sLine != null && !sLine.Equals("") && !sLine.Equals("true") && !sLine.Equals("false") && !sLine.Equals("-----"))
+                if (sLine != null && !sLine.Equals("") && !sLine.Equals("-----"))
                 {
                     int nId = Convert.ToInt32(sLine);
                     rewardedList.Add(nId);
@@ -69,6 +79,15 @@ namespace WindowsFormsApplication1
                             totalList.RemoveAt(i);
                         }
                     }
+
+                    szRecord += nId + "号 ";
+                }
+                else if (sLine == "-----")
+                {
+                    if (nTimes != 0)
+                        szRecord += "\n";
+                    nTimes++;
+                    szRecord += "第" + nTimes + "次摇奖，恭喜以下同学获奖:";
                 }
             }
             objReader.Close();
@@ -106,8 +125,13 @@ namespace WindowsFormsApplication1
                     this.pictureBox1.Image = image;
                 }
             }
+
+            simpleSound.Play();
+            RewardingDlg = new GetRewarding();
+            //RewardingDlg.Parent = this;
+            RewardingDlg.Show();
             
-            System.Timers.Timer t = new System.Timers.Timer(3000);
+            t = new System.Timers.Timer(31000);
             t.Elapsed += new System.Timers.ElapsedEventHandler(theout);
             //到达时间的时候执行事件；   
             t.AutoReset = false;
@@ -127,8 +151,6 @@ namespace WindowsFormsApplication1
             writer.Flush();
             writer.Close();
             objReader.Close();
-
-            simpleSound.Play();
         }
 
         static int GetRandomSeed()
@@ -164,6 +186,10 @@ namespace WindowsFormsApplication1
 
         public void theout(object source, System.Timers.ElapsedEventArgs e)
         {
+            // PostMessage(RewardingDlg.Handle, WM_CLOSE, 0, 0);
+            //t.sto;
+            CloseForm("Close");
+            // RewardingDlg.Close();
             simpleSound.Stop();
             m_eSate = emState.eStop;
             String projectName = Assembly.GetExecutingAssembly().GetName().Name.ToString();
@@ -180,19 +206,35 @@ namespace WindowsFormsApplication1
             ((RewardShow)rewardListDlg).SetShowText(tmpList);
             rewardListDlg.ShowDialog();
 
+            if (nTimes != 1)
+                szRecord += "\n";
             string szShow = "第" + nTimes + "次摇奖，恭喜以下同学获奖:";
             foreach (int id in tmpList)
             {
                 szShow += id + "号 ";
             }
 
-            szRecord += szShow + "\n";
+            szRecord += szShow;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show(szRecord);
         }
+
+        private delegate void CloseFormDelegate(string value);
+        private void CloseForm(string value)
+        {
+            if (RewardingDlg.InvokeRequired)
+            {
+                CloseFormDelegate d = new CloseFormDelegate(CloseForm);
+                RewardingDlg.Invoke(d, new object[] { value });
+            }
+            else
+            {
+                RewardingDlg.Close();
+            }
+        }  
     }
 
     public class MyItem : object
@@ -203,5 +245,5 @@ namespace WindowsFormsApplication1
             // TODO:  添加 MyItem.ToString 实现
             return szShow;
         }
-    }
+    } 
 }

@@ -53,6 +53,12 @@
     <Compile Include="config2.Designer.cs">
       <DependentUpon>config2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetRewarding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetRewarding.Designer.cs">
+      <DependentUpon>GetRewarding.cs</DependentUpon>
+    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="config2.resx">
       <DependentUpon>config2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetRewarding.resx">
+      <DependentUpon>GetRewarding.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -129,6 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\style.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ani.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\use.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
