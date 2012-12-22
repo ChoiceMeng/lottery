@@ -88,7 +88,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.装饰贴;
-            this.pictureBox2.Location = new System.Drawing.Point(588, 244);
+            this.pictureBox2.Location = new System.Drawing.Point(599, 232);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(425, 414);
             this.pictureBox2.TabIndex = 8;
@@ -101,9 +101,9 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.u;
-            this.pictureBox1.Location = new System.Drawing.Point(299, 277);
+            this.pictureBox1.Location = new System.Drawing.Point(314, 276);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 217);
+            this.pictureBox1.Size = new System.Drawing.Size(207, 221);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1424, 862);
+            this.ClientSize = new System.Drawing.Size(1264, 730);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
