@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 549);
+            this.label1.Location = new System.Drawing.Point(162, 454);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 1;
@@ -50,7 +50,7 @@
             // 
             // rewardCount
             // 
-            this.rewardCount.Location = new System.Drawing.Point(330, 546);
+            this.rewardCount.Location = new System.Drawing.Point(197, 451);
             this.rewardCount.Name = "rewardCount";
             this.rewardCount.Size = new System.Drawing.Size(63, 21);
             this.rewardCount.TabIndex = 2;
@@ -58,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(399, 549);
+            this.label2.Location = new System.Drawing.Point(266, 454);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(461, 544);
+            this.button1.Location = new System.Drawing.Point(328, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(365, 601);
+            this.button2.Location = new System.Drawing.Point(232, 506);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 7;
@@ -86,9 +86,8 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.装饰贴;
-            this.pictureBox2.Location = new System.Drawing.Point(599, 232);
+            this.pictureBox2.Location = new System.Drawing.Point(438, 145);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(425, 414);
             this.pictureBox2.TabIndex = 8;
@@ -96,14 +95,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.u;
-            this.pictureBox1.Location = new System.Drawing.Point(314, 276);
+            this.pictureBox1.Location = new System.Drawing.Point(166, 182);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 221);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -113,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1264, 730);
+            this.ClientSize = new System.Drawing.Size(1008, 730);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
